@@ -1,0 +1,15 @@
+{
+  "name": "maplibregl-minimap",
+  "version": "1.0.0",
+  "main": "minimap-control.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo 'build'"
+  },
+  "author": "jabsysemb <cabbar.serif@hotmail.com>",
+  "license": "MIT",
+  "description": "Minimap Plugin for Maplibre-GL",
+  "dependencies": {
+    "maplibre-gl": "^2.0.0"
+  }
+}
