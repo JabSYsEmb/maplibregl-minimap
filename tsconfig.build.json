@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "declaration": true,
+        "emitDeclarationOnly": true,
+        "outDir": "dist/types",
+        "rootDir": "src",
+        "strict": true,
+        "skipLibCheck": true,
+        "noEmit": false,
+        "declarationMap": true
+    },
+    "include": [
+        "src/**/*"
+    ]
+}

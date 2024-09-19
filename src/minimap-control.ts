@@ -1,13 +1,8 @@
-import maplibregl, {
-	LngLatBounds,
-	MapMouseEvent,
-	GeoJSONSource,
-	MapGeoJSONFeature
-} from 'maplibre-gl';
+import maplibregl from 'maplibre-gl';
 import { getRandomUUID } from './utils';
 
-import type { StyleSpecification, ControlPosition, IControl, LngLatLike, LngLatBoundsLike } from "maplibre-gl";
-import type { MiniMapConfiguration, MiniMapOptions, MinimapInteractions } from "./type";
+import type { StyleSpecification, ControlPosition, IControl } from "maplibre-gl";
+import type { MiniMapConfiguration, MiniMapOptions, MinimapInteractions } from "./type.d";
 
 import appendToggleButtonToParentEL from './toggle-button';
 
@@ -39,15 +34,6 @@ class MinimapControl implements IControl {
 	private _minimap!: maplibregl.Map;
 	private _parentMap!: maplibregl.Map;
 	private _minimapContainer!: HTMLDivElement;
-
-	private _currentPoint: LngLatLike | undefined;
-	private _previousPoint: LngLatLike = [0, 0];
-
-	private _trackingRectangleCoords: Array<Array<number>> = [];
-	private _trackingRectangleID = getRandomUUID();
-
-	private _newBounds: LngLatBoundsLike | undefined;
-	private _trackingRectangle: GeoJSONSource | undefined;
 
 	private _cleanupCallbacks: Array<() => void> = [];
 
@@ -236,6 +222,7 @@ class MinimapControl implements IControl {
 		this._cleanupCallbacks.push(() => minimapEl.removeEventListener('contextmenu', preventDefault));
 
 		minimapEl.appendChild(minimapStyleEl);
+		minimapEl.appendChild(trackingRectangle);
 		parentMap.getContainer().appendChild(minimapEl);
 
 		return minimapEl;
