@@ -1,6 +1,6 @@
 # Minimap Plugin for Maplibre-gl Map Engine
 
-This package provides a highly configurable MiniMap component specifically designed for use with the MapLibre GL project. It allows you to display a small overview map alongside the main map, with customizable options for size, zoom level, interactions, and styling, making it a flexible tool for enhancing your MapLibre GL applications.
+This package provides a configurable MiniMap component to use with the MapLibre GL project. It allows you to display a small overview map alongside the main map, with customizable options for size, zoom level, interactions, and styling, making it a flexible tool for enhancing your MapLibre GL applications.
 
 !!!Note: This library is currently in development and not yet ready for production use. Use it at your own risk, and expect potential changes in future releases.!!!
 
