@@ -47,13 +47,6 @@ class MinimapControl implements IControl {
 
 			zoomLevelOffset: 6,
 
-			lineColor: '#0088ff',
-			lineWidth: 1,
-			lineOpacity: 1,
-
-			fillColor: '#ff8800',
-			fillOpacity: 0.25,
-
 			// minimap interactions
 			interactions: {
 				dragPan: false,
@@ -238,7 +231,7 @@ class MinimapControl implements IControl {
 
 		if (this._options.minimizableMinimap) {
 			const minimap_position = (Object.entries(this._parentMap._controlPositions) as Array<[ControlPosition, HTMLElement]>)
-				.find(([_, el]) => el === this._minimapContainer.parentElement)?.[0];
+				.find(([_, el]: [unknown, HTMLElement]) => el === this._minimapContainer.parentElement)?.[0];
 
 			if (!minimap_position) {
 				throw new Error('Toggle button wasn\'t created due to a missing/invalid variable `minimap_position`')

@@ -18,8 +18,6 @@ export type MinimapInteractions = Record<MapInteractions, boolean>;
 export type MiniMapConfiguration = Partial<{
     showText: string;
     hideText: string;
-    center: LngLatLike;
-    bounds: LngLatBoundsLike;
 }> & {
     /** 
     * set custom `id` for the minimap
@@ -37,28 +35,6 @@ export type MiniMapConfiguration = Partial<{
      * the zoom offset of the minimap regarding the parent map (default is 5)
      */
     zoomLevelOffset: 5 | 6 | 7 | 8;
-    /**
-     * color of the tracking rectangle line (default is #0088ff)
-     */
-    lineColor: string;
-    /**
-     * width of the tracking rectangle line (default is 1)
-     */
-    lineWidth: number;
-    /**
-     * opacity of the tracking rectangle line (default is 1)
-     * min value is 0
-     * max value is 1
-     */
-    lineOpacity: number;
-    /**
-     * color of the tracking rectangle fill (default is #ff8800)
-     */
-    fillColor: string;
-    /**
-     * opacity of the tracking rectangle fill (default is 0.25)
-     */
-    fillOpacity: number;
     /**
      * interactions to be disabled/enabled on the minimap (default is all disabled)
      */

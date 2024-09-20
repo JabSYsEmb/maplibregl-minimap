@@ -1,7 +1,9 @@
 {
   "name": "maplibregl-minimap",
   "version": "1.0.0",
-  "main": "minimap-control.ts",
+  "main": "dist/minimap-control.umd.js",
+  "module": "dist/minimap-control.esm.js",
+  "types": "dist/types/index.d.ts.map",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rimraf dist && rollup.cmd -c",

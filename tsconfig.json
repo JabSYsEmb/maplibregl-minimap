@@ -1,7 +1,10 @@
 {
     "extends": "./tsconfig.build.json",
     "compilerOptions": {
-        "noEmit": true
+        "lib": [
+            "dom",
+            "es2017"
+        ],
     },
     "include": [
         "src/**/*"
