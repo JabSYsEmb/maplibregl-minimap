@@ -1,6 +1,6 @@
 {
   "name": "maplibregl-minimap",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/minimap-control.umd.js",
   "module": "dist/minimap-control.esm.js",
   "types": "dist/types/index.d.ts.map",
