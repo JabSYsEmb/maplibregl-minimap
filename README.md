@@ -15,10 +15,22 @@ $ npm i maplibregl-minimap
 ```js
 import MinimapControl from "maplibregl-minimap"
 
+const miniMapConfig = {
+  id: 'myCustomMiniMap',
+  width: '200px',
+  height: '200px',
+  zoomLevelOffset: 6,
+  interactions: { drag: true, zoom: false },
+  initialMinimized: false,
+  minimizableMinimap: true,
+  collapsedWidth: '30px',
+  collapsedHeight: '30px',
+  borderRadius: '5px',
+};
 
 // after the initilize your map
 map.on('load', () => {
-    map.control(new MinimapControl());
+    map.control(new MinimapControl(miniMapConfig));
 })
 ```
 
@@ -59,22 +71,3 @@ export type MiniMapConfiguration = Partial<{
 - `collapsedHeight` (string, optional, default: 29px): The height of the minimap when it is minimized.
 - `borderRadius` (string, optional, default: 3px): Sets the border radius for the minimap container.
 - `style` (StyleSpecification, optional): Custom style object for further styling the minimap. This allows you to define specific visual properties like colors, borders, etc.
-
-### Usage
-
-```
-import type { MiniMapConfiguration } from 'maplibregl-minimap';
-
-const miniMapConfig: MiniMapConfiguration = {
-  id: 'myCustomMiniMap',
-  width: '200px',
-  height: '200px',
-  zoomLevelOffset: 6,
-  interactions: { drag: true, zoom: false },
-  initialMinimized: false,
-  minimizableMinimap: true,
-  collapsedWidth: '30px',
-  collapsedHeight: '30px',
-  borderRadius: '5px',
-};
-```
