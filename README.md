@@ -5,7 +5,9 @@ This package provides a configurable MiniMap component to use with the MapLibre 
 !!!Note: This library is currently in development and not yet ready for production use. Use it at your own risk, and expect potential changes in future releases.!!!
 
 ## Instructions
+
 - Install the plugin using your package manager
+
 ```bash
 $ npm i maplibregl-minimap
 ```
@@ -13,53 +15,55 @@ $ npm i maplibregl-minimap
 - import it into your project and use it directly
 
 ```js
-import MinimapControl from "maplibregl-minimap"
+import MinimapControl from "maplibregl-minimap";
 
 const miniMapConfig = {
-  id: 'myCustomMiniMap',
-  width: '200px',
-  height: '200px',
+  id: "myCustomMiniMap",
+  width: "200px",
+  height: "200px",
   zoomLevelOffset: 6,
   interactions: { drag: true, zoom: false },
   initialMinimized: false,
   minimizableMinimap: true,
-  collapsedWidth: '30px',
-  collapsedHeight: '30px',
-  borderRadius: '5px',
+  collapsedWidth: "30px",
+  collapsedHeight: "30px",
+  borderRadius: "5px",
 };
 
 // after the initilize your map
-map.on('load', () => {
-    map.control(new MinimapControl(miniMapConfig));
-})
+map.on("load", () => {
+  map.control(new MinimapControl(miniMapConfig));
+});
 ```
 
 ## MiniMap Configuration
 
 The configuration object for the MiniMap allows you to control its size, visibility, interaction, and style. Below are the available options.
-It's possible to 
+It's possible to
 
 ### Configuration Properties
+
 ```typescript
 export type MiniMapConfiguration = Partial<{
-    showText: string;
-    hideText: string;
+  showText: string;
+  hideText: string;
 }> & {
-    id: string;
-    width: string;
-    height: string;
-    zoomLevelOffset: 5 | 6 | 7 | 8;
-    interactions: MinimapInteractions;
-    initialMinimized: boolean;
-    minimizableMinimap: boolean;
-    collapsedWidth: string;
-    collapsedHeight: string;
-    borderRadius: string;
-    style: StyleSpecification;
+  id: string;
+  width: string;
+  height: string;
+  zoomLevelOffset: 5 | 6 | 7 | 8;
+  interactions: MinimapInteractions;
+  initialMinimized: boolean;
+  minimizableMinimap: boolean;
+  collapsedWidth: string;
+  collapsedHeight: string;
+  borderRadius: string;
+  style: StyleSpecification;
 };
 ```
 
 ### Property Descriptions
+
 - `id` (string, required): Set a custom id for the minimap. This must be unique within your application.
 - `width` (string, optional, default: 150px): Defines the width of the minimap container.
 - `height` (string, optional, default: 150px): Defines the height of the minimap container.
@@ -71,3 +75,9 @@ export type MiniMapConfiguration = Partial<{
 - `collapsedHeight` (string, optional, default: 29px): The height of the minimap when it is minimized.
 - `borderRadius` (string, optional, default: 3px): Sets the border radius for the minimap container.
 - `style` (StyleSpecification, optional): Custom style object for further styling the minimap. This allows you to define specific visual properties like colors, borders, etc.
+
+## To-Do/Fix
+
+- [ ] Bundling the package results in losing types and autocompletion provided by the intellisence.
+- [ ] figure out what is the initial yet optimal value for 'zoomLevelOffset'.
+- [ ] optimize the package size (currently ~600KB).
