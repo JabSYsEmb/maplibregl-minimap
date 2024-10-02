@@ -6,9 +6,9 @@
   "types": "dist/types/index.d.ts.map",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rimraf dist && rollup.cmd -c",
+    "build": "rimraf dist && rollup -c",
     "build:types": "tsc -p tsconfig.build.json",
-    "build:plugin": "rollup.cmd -c",
+    "build:plugin": "rollup -c",
     "build:clean": "rimraf dist"
   },
   "author": "jabsysemb <cabbar.serif@hotmail.com>",
