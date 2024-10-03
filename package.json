@@ -11,6 +11,10 @@
     "build:clean": "rimraf dist"
   },
   "author": "jabsysemb <cabbar.serif@hotmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JabSYsEmb/maplibregl-minimap"
+  },
   "license": "MIT",
   "description": "Minimap Plugin for Maplibre-GL",
   "type": "module",
