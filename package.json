@@ -1,13 +1,12 @@
 {
   "name": "maplibregl-minimap",
   "version": "1.0.1",
-  "main": "dist/minimap-control.umd.js",
-  "module": "dist/minimap-control.esm.js",
-  "types": "dist/types/index.d.ts.map",
+  "main": "dist/minimap-control.js",
+  "types": "dist/minimap-control.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rimraf dist && rollup -c",
-    "build:types": "tsc -p tsconfig.build.json",
+    "build": "npm run build:clean && tsc && npm run build:types && npm run build:plugin",
+    "build:types": "dts-bundle-generator -o ./dist/minimap-control.d.ts ./src/index.ts",
     "build:plugin": "rollup -c",
     "build:clean": "rimraf dist"
   },
@@ -23,9 +22,9 @@
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
+    "dts-bundle-generator": "^9.5.1",
     "rimraf": "^6.0.1",
     "rollup": "^4.21.3",
-    "tsc": "^2.0.4",
     "tslib": "^2.7.0",
     "typescript": "^5.6.2"
   }

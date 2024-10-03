@@ -1,12 +1,12 @@
 {
-    "extends": "./tsconfig.build.json",
-    "compilerOptions": {
-        "lib": [
-            "dom",
-            "es2017"
-        ],
-    },
-    "include": [
-        "src/**/*"
-    ]
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "staging",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "lib": ["DOM", "ESNext"]
+  },
+  "include": ["src/**/*"]
 }

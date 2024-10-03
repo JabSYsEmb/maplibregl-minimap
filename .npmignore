@@ -2,3 +2,4 @@ src/**
 rollup.config.js
 tsconfig.build.json
 tsconfig.json
+staging/
