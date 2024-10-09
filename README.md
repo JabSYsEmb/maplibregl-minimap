@@ -78,6 +78,6 @@ export type MiniMapConfiguration = Partial<{
 
 ## To-Do/Fix
 
-- [ ] Bundling the package results in losing types and autocompletion provided by the intellisence. (partially solved but still the importer script doesn't recognize types and intellisense doesn't autocomplete while typing... (WIP)
+- [x] Bundling the package results in losing types and autocompletion provided by the intellisence. ~~(partially solved but still the importer script doesn't recognize types and intellisense doesn't autocomplete while typing... (WIP)~~
 - [ ] figure out what is the initial yet optimal value for 'zoomLevelOffset'.
 - [ ] optimize the package size (currently ~600KB).
