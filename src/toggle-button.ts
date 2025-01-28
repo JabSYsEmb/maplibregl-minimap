@@ -56,7 +56,6 @@ export default function appendToggleButtonToParentEl(props: { position: ControlP
 
 		width: 24px;
 		height: 24px;
-		border-start-end-radius: 0.2rem !important;
 		z-index: 2;
 	}
 
@@ -90,8 +89,6 @@ export default function appendToggleButtonToParentEl(props: { position: ControlP
 
 	.minimized > button#${el_id} {
 		border-radius: 0 !important;
-		height: 21px;
-		width: 21px;
 	}
 
 	button#${el_id} svg {
